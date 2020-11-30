@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Input</title>
+</head>
+<body>
+	<div style="margin-top: 100px;
+		padding: 100px;">
+
+<center>
+	<p id="div" style="font-weight: bold;font-size: 24px; text-align: center;">	
+
+    Name &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+    <input id="name" type="text" name="name" onchange="getData()" > <br><br>
+
+	Qualification  
+	<input type="text" id="Qualification" name="Qualification" onchange="getData()"> <br><br>
+
+	&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+       
+	 Hobbies &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="hobby1" name="Hobbies" onchange="getData()">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+	  
+
+        
+	<button onclick ="appendRow()" value="Add Row"><strong> +Add Hobbies</strong></button><br>
+  
+    
+</p>
+</center>
+
+<center>
+<div style="display: block;
+		border: 5px solid black; height: 220px; width: 800px; padding:30px;">
+	<p style="text-align: left;">
+I,<span style="text-decoration: underline;" id="putname">_______</span>, would like to apply for an internship at your organisation. <br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+My Qualification is <span style="text-decoration: underline;" id="putqaulification">____________</span><br>
+
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+
+        
+        
+
+My hobbies are 
+<span style="text-decoration: underline;" id="puthobby1">____________</span>,
+<span style="text-decoration: underline;" id="puthobby2">____________</span>&
+<span style="text-decoration: underline;" id="puthobby3">____________</span>.(if user enters only two hoobies then it should be <span style="text-decoration: underline;" id="puthobby2">____________</span>&
+<span style="text-decoration: underline;" id="puthobby3">____________</span>, if user enters only one hobby it should be <span style="text-decoration: underline;" id="puthobby3">____________</span>.Make sure punctuations are given correctly)
+
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+Thanking you,<br>
+Your Sincerely<br>
+<span style="text-decoration: underline;" id="putname1">_____________</span>
+	</p>
+</div>
+</center>
+
+ 
+ <script type="text/javascript">
+ 	
+
+function getData() {
+
+ let name = document.getElementById("name").value;  
+ document.getElementById('putname').innerHTML = name;
+document.getElementById('putname1').innerHTML = name;
+
+
+let Qualification = document.getElementById("Qualification").value;
+document.getElementById('putqaulification').innerHTML = Qualification;
+
+
+let hobby1 = document.getElementById("hobby1").value;
+document.getElementById('puthobby1').innerHTML = hobby1;
+
+let hobby2 = document.getElementById("hobby2").value;
+document.getElementById('puthobby2').innerHTML = hobby2;
+let hobby3 = document.getElementById("hobby3").value;
+document.getElementById('puthobby3').innerHTML ="&"+hobby3;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </script>
+<script type="text/javascript">
+
+function appendRow()
+{
+   var d = document.getElementById('div');
+   d.innerHTML += "<br><input onchange='getData()' style='margin-left:150px;' type='text' id='hobby2"+"'><br><input onchange='getData()'' style='margin-left:150px;' type='text' id='hobby3"+"'>";
+
+document
+
+}
+
+
+
+
+</script>
+
+	</div>
+
+</body>
+</html>
